@@ -1,1 +1,1 @@
-export const getAuthors : string = "authors : [Author]"
+export const getAuthors : string = "authors(pag : Int!) : [Author]"

@@ -1,0 +1,1 @@
+export const getBooksByAuthors : string = "books(idAuthor : Int!) : [Book]"

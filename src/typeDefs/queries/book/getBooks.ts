@@ -1,1 +1,1 @@
-export const getBooks : string= "books : [Book]" 
+export const getBooks : string = "books(pag : Int!) : [Book]" 
