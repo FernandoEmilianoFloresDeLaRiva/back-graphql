@@ -21,3 +21,11 @@ export const getAuthorByName = async (name: string): Promise<Author> => {
   }
 };
 
+export const createAuthor = async (name: string, lastName : string): Promise<void> => {
+  try{
+    const query = "insert into authors (name, lastName) values (?.?)"
+    await db.execute(query, [name, lastName])
+  }catch(err : any){
+    throw new Error(err)
+  }
+}
