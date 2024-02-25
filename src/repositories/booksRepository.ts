@@ -43,3 +43,27 @@ export const createBook = async (
     throw new Error(err);
   }
 };
+
+export const updateBook = async (
+  id: number,
+  title: string,
+  author: string,
+  stock: number
+): Promise<void> => {
+  try {
+    const query =
+      "update books set author = ?, stock = ?, title = ? where id = ?";
+    await db.execute(query, [author, stock, title, id]);
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
+
+export const deleteBook = async (id: number): Promise<void> => {
+  try {
+    const query = "delete from books where id = ?";
+    await db.execute(query, [id]);
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};

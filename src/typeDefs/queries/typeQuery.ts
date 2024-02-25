@@ -9,11 +9,9 @@ export const allQuerys : string =`
 type Query {
     ${getAuthors}
     ${getAuthorByName}
-
     ${getBooks}
     ${getBookByName}
     ${getBooksByAuthors}
-    
     ${login}
 }
 `
