@@ -1,0 +1,1 @@
+export const createAuthor : string = `createAuthor (name : String!, lastName : String!) : Author`

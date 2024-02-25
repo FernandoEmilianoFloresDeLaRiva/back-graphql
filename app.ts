@@ -1,7 +1,8 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-
-const server = new ApolloServer({ typeDefs: "", resolvers: {} });
+import { typeDefs } from "./src/typeDefs/typeDefs";
+console.log(typeDefs);
+const server = new ApolloServer({ typeDefs, resolvers: {} });
 
 startStandaloneServer(server, {
   listen: { port: 3000 },

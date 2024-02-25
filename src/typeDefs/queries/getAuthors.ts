@@ -1,0 +1,1 @@
+export const getAuthors : string = "authors : [Author]"
