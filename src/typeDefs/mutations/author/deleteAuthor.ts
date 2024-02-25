@@ -1,0 +1,1 @@
+export const deleteAuthor : string = `deleteAuthor (id: Int!) : Author`

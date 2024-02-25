@@ -1,0 +1,1 @@
+export const deleteBook : string = `deleteBook (id : Int!) : Book`

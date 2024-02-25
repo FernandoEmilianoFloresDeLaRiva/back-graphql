@@ -1,0 +1,1 @@
+export const createUser : string = `createUser (email : String!, password : String!) : User`;

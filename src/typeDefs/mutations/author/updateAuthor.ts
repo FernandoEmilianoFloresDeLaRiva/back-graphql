@@ -1,0 +1,1 @@
+export const updateAuthor : string = `updateAuthor (id: Int!, name : String!, lastName : String!) : Author`
