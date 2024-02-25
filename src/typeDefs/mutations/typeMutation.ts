@@ -1,5 +1,5 @@
-import { createAuthor } from "./createAuthor";
-import { createBook } from "./createBook";
+import { createAuthor } from "./author/createAuthor";
+import { createBook } from "./book/createBook";
 
 
 export const allMutations : string = `

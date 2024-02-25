@@ -1,1 +1,0 @@
-export const getBooks : string= "books[Book]" 

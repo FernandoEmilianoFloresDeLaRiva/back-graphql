@@ -1,5 +1,5 @@
-import { getAuthors } from "./getAuthors"
-import { getBooks } from "./getBooks"
+import { getAuthors } from "./author/getAuthors"
+import { getBooks } from "./book/getBooks"
 
 export const allQuerys : string =`
 type Query {
