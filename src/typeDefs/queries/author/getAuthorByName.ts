@@ -1,0 +1,1 @@
+export const getAuthorByName : string = "author(authorName : String!): Author"

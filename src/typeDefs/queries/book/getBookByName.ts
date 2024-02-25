@@ -1,0 +1,1 @@
+export const getBookByName : string = "books(bookName : String!) : Book"
