@@ -14,8 +14,8 @@ export const getAuthors = async (limit: number): Promise<Author[]> => {
 export const getAuthorById = async (id: number): Promise<Author> => {
   try {
     const query = "select * from authors where id = ?";
-    const result = await db.execute(query, [id]);
-    return result[0] as unknown as Author;
+    const result : any= await db.execute(query, [id]);
+    return result[0][0] as Author;
   } catch (err: any) {
     throw new Error(err);
   }
@@ -24,8 +24,8 @@ export const getAuthorById = async (id: number): Promise<Author> => {
 export const getAuthorByName = async (name: string): Promise<Author> => {
   try {
     const query = "select * from authors where name = ?";
-    const result = await db.execute(query, [name]);
-    return result[0] as unknown as Author;
+    const result: any = await db.execute(query, [name]);
+    return result[0][0] as Author;
   } catch (err: any) {
     throw new Error(err);
   }
@@ -36,7 +36,7 @@ export const createAuthor = async (
   lastName: string
 ): Promise<void> => {
   try {
-    const query = "insert into authors (name, lastName) values (?.?)";
+    const query = "insert into authors (name, lastName) values (?,?)";
     await db.execute(query, [name, lastName]);
   } catch (err: any) {
     throw new Error(err);

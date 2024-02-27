@@ -2,6 +2,7 @@ import { ApolloServer } from "@apollo/server";
 import { db } from "./src/config/db";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { typeDefs } from "./src/typeDefs/typeDefs";
+import { resolvers } from "./src/resolvers/indexResolver";
 
 db.connect()
   .then(() => console.log("Database connected"))
@@ -10,7 +11,7 @@ db.connect()
   });
 
 console.log(typeDefs);
-const server = new ApolloServer({ typeDefs, resolvers: {} });
+const server = new ApolloServer({ typeDefs, resolvers });
 
 startStandaloneServer(server, {
   listen: { port: 3000 },

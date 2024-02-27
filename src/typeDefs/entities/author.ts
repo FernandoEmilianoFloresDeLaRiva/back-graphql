@@ -1,6 +1,6 @@
 export const typeAuthor : string= `
 type Author {
-    id : ID !
+    id : ID 
     name : String!
     lastName : String!
 }`

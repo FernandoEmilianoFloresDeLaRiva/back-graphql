@@ -1,1 +1,1 @@
-export const getBookByName : string = "books(bookName : String!) : Book"
+export const getBookByName : string = "booksByName(bookName : String!) : Book"
