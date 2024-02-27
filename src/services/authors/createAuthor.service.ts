@@ -7,7 +7,6 @@ export const createAuthorService = async (
 ): Promise<CreateAuthorDto> => {
   try {
     await AuthorsRepository.createAuthor(name, lastName);
-
     return {
       name,
       lastName,
