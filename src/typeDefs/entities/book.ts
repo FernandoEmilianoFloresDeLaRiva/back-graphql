@@ -1,7 +1,7 @@
-export const typeBook : string = `
+export const typeBook: string = `
 type Book {
     id : ID!
     title : String!
-    author : String!
+    author : Author!
     stock : Int!
 }`;

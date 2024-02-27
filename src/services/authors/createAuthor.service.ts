@@ -1,5 +1,5 @@
 import * as AuthorsRepository from "../../repositories/authorsRepository";
-import { CreateAuthorDto } from "../../typeDefs/entities/createAuthorDTO";
+import { CreateAuthorDto } from "../../entities/author/createAuthorDTO";
 
 export const createAuthorService = async (
   name: string,

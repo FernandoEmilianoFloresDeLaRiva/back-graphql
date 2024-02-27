@@ -1,5 +1,5 @@
 import { db } from "../config/db";
-import { User } from "../entities/user.entity";
+import { User } from "../entities/user/user.entity";
 
 export const getUserByEmail = async (email: string): Promise<User> => {
   try {

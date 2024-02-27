@@ -1,4 +1,4 @@
-import { Author } from "../../entities/author.entity";
+import { Author } from "../../entities/author/author.entity";
 import * as AuthorsRepository from "../../repositories/authorsRepository";
 
 export const getAuthorsService = async (page: number): Promise<Author[]> => {

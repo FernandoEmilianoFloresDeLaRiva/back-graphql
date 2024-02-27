@@ -1,5 +1,5 @@
 import { db } from "../config/db";
-import { Book } from "../entities/book.entity";
+import { Book } from "../entities/book/book.entity";
 
 export const getBooks = async (limit: number): Promise<Book[]> => {
   try {
