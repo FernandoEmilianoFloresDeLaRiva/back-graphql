@@ -16,7 +16,7 @@ export const createUser = async (
   password: string
 ): Promise<void> => {
   try {
-    const query = "insert into users (email, password) values (?, ?)";
+    const query = "insert into users (email, password, url) values (?, ?, ?)";
     await db.execute(query, [email, password]);
   } catch (err: any) {
     throw new Error(err);
