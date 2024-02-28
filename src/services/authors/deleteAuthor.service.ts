@@ -1,20 +1,22 @@
 import * as AuthorRepository from "../../repositories/authorsRepository";
+import * as BookRepository from "../../repositories/booksRepository";
 import { Author } from "../../entities/author/author.entity";
 import { getAllUsersUrlService } from "../users/getUsersUrl.service";
 import { notifyUser } from "../../api/notifyUser";
 
 export const deleteAuthorService = async (id: number): Promise<Author> => {
   try {
-    const user: Author = await AuthorRepository.getAuthorById(id);
-    if (user) {
+    const author: Author = await AuthorRepository.getAuthorById(id);
+    if (author) {
+      await BookRepository.deleteBookByAuthor(id);
       await AuthorRepository.deleteAuthor(id);
       const allUrls = await getAllUsersUrlService();
       if (allUrls.length) {
-        allUrls.forEach(({url}) => {
-          if(url !== null) notifyUser(user, url, "delete-author");
+        allUrls.forEach(({ url }) => {
+          if (url !== null) notifyUser(author, url, "delete-author");
         });
       }
-      return user;
+      return author;
     }
     throw new Error("Author not found");
   } catch (err: any) {

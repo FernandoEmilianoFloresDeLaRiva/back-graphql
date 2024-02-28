@@ -1,11 +1,13 @@
 import { UpdateBookDTO } from "../../entities/book/updateBookDTO";
 import * as BookRepository from "../../repositories/booksRepository";
 import { Book } from "../../entities/book/book.entity";
+import { GetBook } from "../../entities/book/getBookDTO";
+import { asignAuthorToBook } from "../../utils/bookUtils/asignAuthorToBook";
 
 export const updateBookService = async (
   id: number,
   updateBook: UpdateBookDTO
-): Promise<UpdateBookDTO> => {
+): Promise<GetBook> => {
   try {
     const originalBook: Book = await BookRepository.getBookById(id);
     if (originalBook) {
@@ -15,7 +17,8 @@ export const updateBookService = async (
       };
     const { id, title, author, stock } = newBook;
     await BookRepository.updateBook(id, title, author, stock);
-    return newBook;
+    const res = asignAuthorToBook(newBook);
+    return res;
     }
     throw new Error("Author not found");
   } catch (error: any) {

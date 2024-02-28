@@ -1,6 +1,5 @@
 import { GraphQLError } from "graphql";
 import { getBooksService } from "../../../services/books/getBooks.service";
-
 export default async (_root: any, args: any) => {
   try {
     const { pag } = args;
