@@ -5,7 +5,6 @@ export default async ({ req, _res }: any) => {
   if (req.body.operationName === "IntrospectionQuery") {
     return {};
   }
-  console.log(req.body.query);
   if (
     req.body.query.includes("createUser") ||
     req.body.query.includes("loginUser")

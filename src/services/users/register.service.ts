@@ -5,7 +5,7 @@ import { createJwt } from "../../utils/jwt/createJwt.util";
 export const registerService = async (
   email: string,
   password: string,
-  url: string
+  url: string = ""
 ): Promise<string> => {
   try {
     const existingUser = await userRepository.getUserByEmail(email);

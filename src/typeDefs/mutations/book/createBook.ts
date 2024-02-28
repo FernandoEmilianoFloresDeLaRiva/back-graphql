@@ -1,1 +1,1 @@
-export const createBook : string = `createBook(title : String!, author : String!, stock : Int!) : Book`
+export const createBook : string = `createBook(title : String!, author : Int!, stock : Int!) : Book`
