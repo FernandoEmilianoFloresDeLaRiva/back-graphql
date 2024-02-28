@@ -1,1 +1,1 @@
-export const login : string = "user(email: String!, password: String!) : User"
+export const getUsers: string = "users : [User]";
