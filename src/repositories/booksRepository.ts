@@ -14,7 +14,7 @@ export const getBooks = async (limit: number): Promise<Book[]> => {
 export const getBookByName = async (name: string): Promise<Book> => {
   try {
     const query = "select * from books where title = ?";
-    const result : any = await db.execute(query, [name]);
+    const result: any = await db.execute(query, [name]);
     return result[0][0] as Book;
   } catch (err: any) {
     throw new Error(err);
@@ -24,7 +24,7 @@ export const getBookByName = async (name: string): Promise<Book> => {
 export const getBookById = async (id: number): Promise<Book> => {
   try {
     const query = "select * from books where id = ?";
-    const result : any = await db.execute(query, [id]);
+    const result: any = await db.execute(query, [id]);
     return result[0][0] as Book;
   } catch (err: any) {
     throw new Error(err);
@@ -34,7 +34,7 @@ export const getBookById = async (id: number): Promise<Book> => {
 export const getBookByAuthor = async (author: number): Promise<Book> => {
   try {
     const query = "select * from books where author = ?";
-    const result : any = await db.execute(query, [author]);
+    const result: any = await db.execute(query, [author]);
     return result[0][0] as Book;
   } catch (err: any) {
     throw new Error(err);

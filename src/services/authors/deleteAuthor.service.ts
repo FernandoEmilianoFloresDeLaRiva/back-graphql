@@ -11,7 +11,7 @@ export const deleteAuthorService = async (id: number): Promise<Author> => {
       const allUrls = await getAllUsersUrlService();
       if (allUrls.length) {
         allUrls.forEach(({url}) => {
-          notifyUser(user, url, "delete-author");
+          if(url !== null) notifyUser(user, url, "delete-author");
         });
       }
       return user;
