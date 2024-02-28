@@ -14,18 +14,28 @@ export const getBooks = async (limit: number): Promise<Book[]> => {
 export const getBookByName = async (name: string): Promise<Book> => {
   try {
     const query = "select * from books where title = ?";
-    const result = await db.execute(query, [name]);
-    return result[0] as unknown as Book;
+    const result : any = await db.execute(query, [name]);
+    return result[0][0] as Book;
   } catch (err: any) {
     throw new Error(err);
   }
 };
 
-export const getBookByAuthor = async (author: string): Promise<Book> => {
+export const getBookById = async (id: number): Promise<Book> => {
+  try {
+    const query = "select * from books where id = ?";
+    const result : any = await db.execute(query, [id]);
+    return result[0][0] as Book;
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
+
+export const getBookByAuthor = async (author: number): Promise<Book> => {
   try {
     const query = "select * from books where author = ?";
-    const result = await db.execute(query, [author]);
-    return result[0] as unknown as Book;
+    const result : any = await db.execute(query, [author]);
+    return result[0][0] as Book;
   } catch (err: any) {
     throw new Error(err);
   }
@@ -33,7 +43,7 @@ export const getBookByAuthor = async (author: string): Promise<Book> => {
 
 export const createBook = async (
   title: string,
-  author: string,
+  author: number,
   stock: number
 ): Promise<void> => {
   try {
@@ -47,7 +57,7 @@ export const createBook = async (
 export const updateBook = async (
   id: number,
   title: string,
-  author: string,
+  author: number,
   stock: number
 ): Promise<void> => {
   try {

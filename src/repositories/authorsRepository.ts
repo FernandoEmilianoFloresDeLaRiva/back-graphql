@@ -14,7 +14,7 @@ export const getAuthors = async (limit: number): Promise<Author[]> => {
 export const getAuthorById = async (id: number): Promise<Author> => {
   try {
     const query = "select * from authors where id = ?";
-    const result : any= await db.execute(query, [id]);
+    const result : any = await db.execute(query, [id]);
     return result[0][0] as Author;
   } catch (err: any) {
     throw new Error(err);
