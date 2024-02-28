@@ -1,13 +1,14 @@
 import { GraphQLError } from "graphql";
-import { getBookByNameService } from "../../../services/books/getBookByName.service";
+import { getBookByAuthorService } from "../../../services/books/getBookByAuthor.service";
 
 export default async (_root: any, args: any) => {
   try {
     const { idAuthor } = args;
-    const res = await getBookByNameService(idAuthor);
+    const res = await getBookByAuthorService(idAuthor);
     console.log(res);
     return res;
   } catch (error: any) {
+    console.error(error);
     throw new GraphQLError(error);
   }
 };

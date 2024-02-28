@@ -1,1 +1,1 @@
-export const updateBook : string = `updateBook (id : Int!, title : String!, author : String!, stock : Int!) : Book`
+export const updateBook : string = `updateBook (id : Int!, title : String!, author : Int!, stock : Int!) : Book`

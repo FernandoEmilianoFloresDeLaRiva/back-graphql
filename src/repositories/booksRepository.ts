@@ -31,11 +31,11 @@ export const getBookById = async (id: number): Promise<Book> => {
   }
 };
 
-export const getBookByAuthor = async (author: number): Promise<Book> => {
+export const getBooksByAuthor = async (author: number): Promise<Book[]> => {
   try {
     const query = "select * from books where author = ?";
     const result : any = await db.execute(query, [author]);
-    return result[0][0] as Book;
+    return result[0] as Book[];
   } catch (err: any) {
     throw new Error(err);
   }
@@ -72,6 +72,15 @@ export const updateBook = async (
 export const deleteBook = async (id: number): Promise<void> => {
   try {
     const query = "delete from books where id = ?";
+    await db.execute(query, [id]);
+  } catch (err: any) {
+    throw new Error(err);
+  }
+};
+
+export const deleteBookByAuthor = async (id: number): Promise<void> => {
+  try {
+    const query = "delete from books where author = ?";
     await db.execute(query, [id]);
   } catch (err: any) {
     throw new Error(err);
